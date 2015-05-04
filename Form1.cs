@@ -37,20 +37,6 @@ namespace WindowsFormsApplication1
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
             
@@ -60,9 +46,21 @@ namespace WindowsFormsApplication1
                 bool test = PingHost("google.com");
                 if (!test)
                 {
-                    outtest();
-                    play = !play;
-                    ++playy;
+                    bool testa = PingHost("google.com");
+                    if (!testa)
+                    {
+                        outtest();
+                        play = !play;
+                        ++playy;
+                    }
+                    else
+                    {
+                        if (playy < 4)
+                        {
+                            --playy;
+                        }
+                    }
+                    
                 }
                 else
                 {
